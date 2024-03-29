@@ -1,0 +1,113 @@
+@use "../../base";
+
+.contact-me {
+  position: relative;
+  padding: 12rem 4rem 4rem 4rem;
+  overflow-x: hidden;
+  text-align: center;
+  z-index: 0;
+}
+.contact-me::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-image: linear-gradient(#0c0c0c, base.$bg-color);
+  opacity: 0.8;
+  box-shadow: 0px 0px 30px 20px base.$bg-color;
+}
+
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .contact-me {
+    padding: 12em 1rem 4rem 1rem;
+  }
+}
+
+.contact-me > .title {
+  position: relative;
+  @extend %gradient-text;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.contact-me .contact-links {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact-me .contact-link {
+  position: relative;
+  border: solid 1px base.$secondary-text-color;
+  border-radius: 0.5rem;
+  background-color: base.$bg-accent-color;
+  z-index: 0;
+  text-align: center;
+  width: fit-content;
+  padding: 3rem;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+.contact-me .contact-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  background-image: url("/resources/morphing-diamonds.svg");
+  opacity: 0.025;
+  z-index: 0;
+}
+.contact-me .contact-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#0000002b, base.$bg-accent-color);
+  z-index: 1;
+}
+
+.contact-me .contact-link .title {
+  position: relative;
+  @extend %gradient-text;
+  z-index: 2;
+}
+
+.contact-me .contact-link .image {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  margin-top: 1rem;
+  padding: 2rem;
+}
+
+.contact-me .contact-links .or {
+  vertical-align: middle;
+}
+
+.contact-me .gear1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+  top: 0px;
+  left: -120px;
+}
+
+.contact-me .gear-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  filter: blur(10px);
+}

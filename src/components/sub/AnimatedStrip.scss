@@ -1,0 +1,30 @@
+@use "../../base";
+
+.strip {
+  position: relative;
+  margin-top: 6rem;
+  width: 100%;
+  height: 2rem;
+  background: base.$bg-accent-color;
+  overflow-x: hidden;
+}
+
+.strip > .strip-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 0;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  will-change: translate;
+}
+
+.strip .strip-badge {
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.strip .strip-text {
+  text-wrap: nowrap;
+}

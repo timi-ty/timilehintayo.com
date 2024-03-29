@@ -1,0 +1,21 @@
+$max-width-page: 1920px;
+$max-width-header: 1440px;
+$mobile-breakwidth: 800px;
+$bg-color: #0a0a0a;
+$bg-accent-color: #141414;
+$primary-text-color: #f0f0f0;
+$secondary-text-color: #5b5b5b;
+$action-color: #808080;
+$header-height: 3rem;
+
+%gradient-text {
+  background: linear-gradient(
+    to right,
+    $secondary-text-color,
+    $primary-text-color,
+    $secondary-text-color
+  );
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}

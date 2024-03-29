@@ -1,0 +1,63 @@
+@use "../../base";
+
+.my-engineering-principles {
+  position: relative;
+  padding: 6rem 4rem 8rem 4rem;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .my-engineering-principles {
+    padding: 6rem 1rem 8rem 1rem;
+  }
+}
+
+.my-engineering-principles > .title {
+  @extend %gradient-text;
+  max-width: 38rem;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.my-engineering-principles > .principle-cards {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 3rem;
+}
+
+//Adding all the margins, we need a screen of at least 53rem wdith to have 2 columns.
+@media screen and (min-width: 53rem) {
+  .my-engineering-principles > .principle-cards {
+    grid-template-columns: auto auto;
+  }
+}
+
+//Adding all the margins, we need a screen of at least 76rem wdith to have 3 columns.
+@media screen and (min-width: 76rem) {
+  .my-engineering-principles > .principle-cards {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+.my-engineering-principles .gear2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+  top: 100px;
+  right: -120px;
+}
+
+.my-engineering-principles .gear-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  filter: blur(10px);
+}
+
+@media screen and (max-width: 870px) {
+  .my-engineering-principles .gear-image {
+    opacity: 0.2;
+  }
+}

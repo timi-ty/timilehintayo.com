@@ -1,0 +1,102 @@
+@use "../../base";
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 8rem;
+  overflow-x: hidden;
+}
+
+.hero .photo-container1 {
+  padding: 1.5px;
+  background-image: linear-gradient(base.$primary-text-color, base.$bg-color);
+  border-radius: 50%;
+}
+
+.hero .photo-container2 {
+  padding: 8px;
+  background-color: base.$bg-color;
+  border-radius: 50%;
+}
+
+.hero .photo {
+  height: 6rem;
+  width: 6rem;
+  clip-path: circle();
+}
+
+.hero .greeting {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background: linear-gradient(
+    to right,
+    base.$primary-text-color,
+    base.$secondary-text-color
+  );
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.hero .title {
+  @extend %gradient-text;
+  margin-top: 2rem;
+  max-width: 42rem;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .hero .title {
+    font-size: 2.5rem;
+  }
+}
+
+.hero .description {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  max-width: 32rem;
+  color: base.$secondary-text-color;
+}
+
+.hero .button-group {
+  margin-top: 4rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.hero .gear1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+  bottom: 50px;
+  left: -120px;
+}
+
+.hero .gear2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+  top: 0px;
+  right: -120px;
+}
+
+.hero .gear-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  filter: blur(10px);
+}
+
+@media screen and (max-width: 870px) {
+  .hero .gear-image {
+    opacity: 0.2;
+  }
+}

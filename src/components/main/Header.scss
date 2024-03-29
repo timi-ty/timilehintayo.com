@@ -1,0 +1,136 @@
+@use "../../base";
+
+.header-outer {
+  position: fixed;
+  top: 0px;
+  left: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.header {
+  height: base.$header-height;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background-color: base.$bg-accent-color;
+  border-radius: 0px 0px 1rem 1rem;
+  font-size: 0.8rem;
+  max-width: base.$max-width-header;
+  box-shadow: 0px 0px 30px 2px base.$bg-color;
+}
+
+.header > .left {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1rem;
+}
+
+.header .badge {
+  height: 100%;
+  padding: 0.3rem;
+}
+
+.header > .middle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .header > .middle {
+    display: none;
+  }
+}
+
+.header > .right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .header > .right {
+    display: none;
+  }
+}
+
+.header > .menu {
+  height: 100%;
+  padding: 0.25rem;
+}
+
+@media screen and (min-width: base.$mobile-breakwidth) {
+  .header > .menu {
+    display: none;
+  }
+}
+
+.header > .menu .icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.header .social {
+  height: 100%;
+  padding: 0.1rem;
+  border: solid 1px base.$secondary-text-color;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header .social:hover {
+  scale: 1.1;
+  border: solid 1px base.$primary-text-color;
+  transition: scale 0.1s ease;
+}
+
+.header .contact-now {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+  padding-left: 0.5rem;
+  border: solid 1px base.$secondary-text-color;
+  border-radius: 99999px;
+  font-weight: 500;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.header .contact-now:hover {
+  scale: 1.05;
+  border: solid 1px base.$primary-text-color;
+  transition: scale 0.1s ease;
+}
+
+.header .arrow {
+  height: 100%;
+  padding: 0.1rem;
+  background-color: base.$action-color;
+  border-radius: 50%;
+}
+
+.header .link {
+  color: base.$secondary-text-color;
+  cursor: pointer;
+}
+.header .link:hover {
+  color: base.$primary-text-color;
+}
+.header .link:hover .primary {
+  color: base.$secondary-text-color;
+}
+.header .link.active {
+  color: base.$primary-text-color;
+}

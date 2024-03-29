@@ -1,0 +1,9 @@
+@use "../../base";
+
+.footer {
+  margin-top: 16rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: base.$bg-color;
+  color: base.$secondary-text-color;
+}
