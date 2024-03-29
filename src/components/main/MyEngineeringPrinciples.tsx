@@ -18,9 +18,13 @@ function MyEngineeringPrinciples({ id }: Props) {
         Engineering principles for quality code and products
       </div>
       <div className="principle-cards">
-        <EngineeringPrinciple />
-        <EngineeringPrinciple />
-        <EngineeringPrinciple />
+        <EngineeringPrinciple
+          title={"Functionality First"}
+          description={
+            "Always confirming that the core functionality of a feature/product has been cemented before adding flair/style greatly reduces the risk of encountering hard bugs."
+          }
+          image={"/resources/functionality-lightbulb.png"}
+        />
       </div>
     </div>
   );

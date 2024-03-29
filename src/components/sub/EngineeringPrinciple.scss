@@ -11,6 +11,13 @@
   border-left: none;
   border-right: none;
   border-bottom: none;
+  transition: scale 0.2s ease;
+}
+.engineering-principle:hover {
+  scale: 1.025;
+}
+.engineering-principle:active {
+  scale: 1.025;
 }
 .engineering-principle::before {
   content: "";
@@ -58,10 +65,10 @@
 
 .engineering-principle .bottom {
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   left: 0;
   right: 0;
-  height: 18rem;
+  height: 16rem;
   padding: 1rem;
   z-index: 0;
 }
@@ -70,4 +77,11 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  opacity: 0.8;
+}
+.engineering-principle:hover .image {
+  animation: pulse 2s ease-in-out infinite;
+}
+.engineering-principle:active .image {
+  animation: pulse 2s ease-in-out infinite;
 }
