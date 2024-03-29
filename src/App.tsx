@@ -21,16 +21,16 @@ function App() {
   return (
     <>
       <header>
-        <Header section={section} setSection={setSection} />
+        <Header id="header" currentSection={section} setSection={setSection} />
       </header>
       <main>
-        <Hero />
-        <MyEngineeringPrinciples />
-        <ProjectSpindr />
-        <ContactMe />
+        <Hero id="home" setSection={setSection} />
+        <MyEngineeringPrinciples id="engineering-principles" />
+        <ProjectSpindr id="projects" />
+        <ContactMe id="contact" />
       </main>
       <footer>
-        <Footer />
+        <Footer id="footer" />
       </footer>
     </>
   );
@@ -41,6 +41,8 @@ function urlSuffixToSectionId(): SectionId {
   switch (urlSuffix) {
     case "/home":
       return "home";
+    case "/engineering-principles":
+      return "engineering-principles";
     case "/projects":
       return "projects";
     case "/contact":

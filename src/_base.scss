@@ -19,3 +19,14 @@ $header-height: 3rem;
   background-clip: text;
   -webkit-background-clip: text;
 }
+
+%clickable {
+  transition: scale 0.1s ease;
+  cursor: pointer;
+}
+%clickable:hover {
+  scale: 1.05;
+}
+%clickable:active {
+  scale: 0.95;
+}

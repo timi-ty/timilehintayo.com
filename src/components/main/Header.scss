@@ -86,13 +86,9 @@
   padding: 0.1rem;
   border: solid 1px base.$secondary-text-color;
   border-radius: 50%;
-  cursor: pointer;
 }
-
 .header .social:hover {
-  scale: 1.1;
   border: solid 1px base.$primary-text-color;
-  transition: scale 0.1s ease;
 }
 
 .header .contact-now {
@@ -105,13 +101,9 @@
   border-radius: 99999px;
   font-weight: 500;
   gap: 0.3rem;
-  cursor: pointer;
 }
-
 .header .contact-now:hover {
-  scale: 1.05;
   border: solid 1px base.$primary-text-color;
-  transition: scale 0.1s ease;
 }
 
 .header .arrow {
@@ -122,15 +114,18 @@
 }
 
 .header .link {
+  @extend %clickable;
   color: base.$secondary-text-color;
-  cursor: pointer;
 }
 .header .link:hover {
+  color: base.$primary-text-color;
+}
+.header .link:active {
   color: base.$primary-text-color;
 }
 .header .link:hover .primary {
   color: base.$secondary-text-color;
 }
-.header .link.active {
+.header .link.selected {
   color: base.$primary-text-color;
 }

@@ -4,11 +4,12 @@ import { SectionId } from "../sub/useCurrentSection";
 import { useMemo } from "react";
 
 interface Props {
-  section: SectionId;
+  id: string;
+  currentSection: SectionId;
   setSection: (nextSection: SectionId) => void;
 }
 
-function Header({ section, setSection }: Props) {
+function Header({ id, currentSection, setSection }: Props) {
   const gearRefs = useGearRotation();
 
   const email = "timilehin.ty@gmail.com";
@@ -19,7 +20,7 @@ function Header({ section, setSection }: Props) {
   const mailtoLink = "mailto:" + encodedEmail;
 
   return (
-    <div className="header-outer">
+    <div id={id} className="header-outer">
       <div className="header">
         <div className="left link" onClick={() => setSection("home")}>
           <img
@@ -35,19 +36,26 @@ function Header({ section, setSection }: Props) {
         </div>
         <nav className="middle">
           <div
-            className={`link ${section === "home" ? "active" : ""}`}
+            className={`link ${
+              currentSection === "home" ||
+              currentSection === "engineering-principles"
+                ? "selected"
+                : ""
+            }`}
             onClick={() => setSection("home")}
           >
             Home
           </div>
           <div
-            className={`link ${section === "projects" ? "active" : ""}`}
+            className={`link ${
+              currentSection === "projects" ? "selected" : ""
+            }`}
             onClick={() => setSection("projects")}
           >
             Projects
           </div>
           <div
-            className={`link ${section === "contact" ? "active" : ""}`}
+            className={`link ${currentSection === "contact" ? "selected" : ""}`}
             onClick={() => setSection("contact")}
           >
             Contact
@@ -75,7 +83,7 @@ function Header({ section, setSection }: Props) {
           >
             <img className="badge" src="/resources/github.png" alt="GitHub" />
           </a>
-          <a className="contact-now" href={mailtoLink}>
+          <a className="contact-now primary" href={mailtoLink}>
             Contact Now
             <img
               className="arrow"

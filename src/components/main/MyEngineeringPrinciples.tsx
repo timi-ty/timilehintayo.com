@@ -2,11 +2,15 @@ import EngineeringPrinciple from "../sub/EngineeringPrinciple";
 import "./MyEngineeringPrinciples.scss";
 import useGearRotation from "../sub/useGearRotation";
 
-function MyEngineeringPrinciples() {
+interface Props {
+  id: string;
+}
+
+function MyEngineeringPrinciples({ id }: Props) {
   const gearRefs = useGearRotation();
 
   return (
-    <div className="my-engineering-principles">
+    <div id={id} className="my-engineering-principles">
       <div ref={(mRef) => (gearRefs.current = [null, mRef])} className="gear2">
         <img className="gear-image" src="/resources/gear_dark.png" />
       </div>

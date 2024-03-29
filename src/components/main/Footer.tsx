@@ -1,8 +1,14 @@
 import "./Footer.scss";
 
-function Footer() {
+interface Props {
+  id: string;
+}
+
+function Footer({ id }: Props) {
   return (
-    <div className="footer">Built with React.js © 2024 Timilehin Tayo</div>
+    <div id={id} className="footer">
+      Built with React.js © 2024 Timilehin Tayo
+    </div>
   );
 }
 

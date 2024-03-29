@@ -1,11 +1,15 @@
 import "./ProjectSpindr.scss";
 import useGearRotation from "../sub/useGearRotation";
 
-function ProjectSpindr() {
+interface Props {
+  id: string;
+}
+
+function ProjectSpindr({ id }: Props) {
   const gearRefs = useGearRotation();
 
   return (
-    <div id="projects" className="project-spindr">
+    <div id={id} className="project-spindr">
       <div ref={(mRef) => (gearRefs.current = [mRef])} className="gear1">
         <img className="gear-image" src="/resources/gear_dark.png" />
       </div>

@@ -1,11 +1,15 @@
 import "./ContactMe.scss";
 import useGearRotation from "../sub/useGearRotation";
 
-function ContactMe() {
+interface Props {
+  id: string;
+}
+
+function ContactMe({ id }: Props) {
   const gearRefs = useGearRotation();
 
   return (
-    <div id="contact" className="contact-me">
+    <div id={id} className="contact-me">
       <div ref={(mRef) => (gearRefs.current = [mRef])} className="gear1">
         <img className="gear-image" src="/resources/gear_dark.png" />
       </div>

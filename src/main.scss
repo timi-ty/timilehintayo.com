@@ -39,10 +39,14 @@ body {
 }
 
 a {
+  @extend %clickable;
   color: base.$secondary-text-color;
   text-decoration: none;
 }
 a:hover {
+  color: base.$primary-text-color;
+}
+a:active {
   color: base.$primary-text-color;
 }
 a:hover .primary {
@@ -56,14 +60,30 @@ button {
   background: linear-gradient(to right, base.$bg-accent-color, base.$bg-color);
   color: base.$primary-text-color;
   font-size: 0.8rem;
+  pointer-events: none;
 }
 
 .button-container {
+  @extend %clickable;
   padding: 1px;
   border-radius: 99999px;
   background-image: linear-gradient(
     to right,
     base.$secondary-text-color,
     base.$bg-color
+  );
+}
+.button-container:hover {
+  background-image: linear-gradient(
+    to right,
+    base.$secondary-text-color,
+    base.$secondary-text-color
+  );
+}
+.button-container:active {
+  background-image: linear-gradient(
+    to right,
+    base.$secondary-text-color,
+    base.$secondary-text-color
   );
 }

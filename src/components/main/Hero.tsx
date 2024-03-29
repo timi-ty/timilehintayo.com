@@ -1,10 +1,15 @@
 import AnimatedStrip from "../sub/AnimatedStrip";
 import "./Hero.scss";
 import useGearRotation from "../sub/useGearRotation";
+import { SectionId } from "../sub/useCurrentSection";
 
-function Hero() {
+interface Props {
+  id: string;
+  setSection: (nextSection: SectionId) => void;
+}
+
+function Hero({ id, setSection }: Props) {
   const gearRefs = useGearRotation();
-
   const grabGearRef = (gearIndex: number) =>
     function (mRef: HTMLDivElement | null) {
       // Index of the item to be overwritten
@@ -37,7 +42,7 @@ function Hero() {
   ];
 
   return (
-    <div id="home" className="hero">
+    <div id={id} className="hero">
       <div ref={grabGearRef(0)} className="gear1">
         <img className="gear-image" src="/resources/gear_dark.png" />
       </div>
@@ -60,10 +65,16 @@ function Hero() {
         ensuring swift deployment and optimal UX.
       </div>
       <div className="button-group">
-        <div className="button-container">
+        <div
+          className="button-container"
+          onClick={() => setSection("engineering-principles")}
+        >
           <button>My Engineering Principles</button>
         </div>
-        <div className="button-container">
+        <div
+          className="button-container"
+          onClick={() => setSection("projects")}
+        >
           <button>Project Spindr</button>
         </div>
       </div>

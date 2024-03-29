@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
-export type SectionId = "home" | "projects" | "contact";
+export type SectionId =
+  | "home"
+  | "engineering-principles"
+  | "projects"
+  | "contact";
 
 const homeId: SectionId = "home";
+const principlesId: SectionId = "engineering-principles";
 const projectsId: SectionId = "projects";
 const contactId: SectionId = "contact";
 
@@ -21,7 +26,7 @@ function useCurrentSection(defaultSectionId: SectionId) {
       var elementOffset = targetSection.offsetTop;
       window.scrollTo({
         top: elementOffset,
-        behavior: "smooth",
+        behavior: "instant",
       });
     }
     setCurrentSectionId(targetSectionId);
@@ -42,13 +47,17 @@ function useCurrentSection(defaultSectionId: SectionId) {
       });
     }
 
-    const observer = new IntersectionObserver(handleIntersection);
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+    });
     observer.observe(document.getElementById(homeId)!);
+    observer.observe(document.getElementById(principlesId)!);
     observer.observe(document.getElementById(projectsId)!);
     observer.observe(document.getElementById(contactId)!);
 
     return () => {
       observer.unobserve(document.getElementById(homeId)!);
+      observer.unobserve(document.getElementById(principlesId)!);
       observer.unobserve(document.getElementById(projectsId)!);
       observer.unobserve(document.getElementById(contactId)!);
     };
