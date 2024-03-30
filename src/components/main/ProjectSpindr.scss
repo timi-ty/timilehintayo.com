@@ -2,16 +2,21 @@
 
 .project-spindr {
   position: relative;
-  padding: 4rem 4rem 0rem 4rem;
-  overflow-x: hidden;
+  padding: 6rem 4rem 0rem 4rem;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   gap: 4rem;
+  overflow-x: hidden;
 }
-
+@media screen and (max-width: 1000px) {
+  .project-spindr {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 @media screen and (max-width: base.$mobile-breakwidth) {
   .project-spindr {
-    padding: 12rem 1rem 0rem 1rem;
+    padding: 6rem 1rem 0rem 1rem;
   }
 }
 
@@ -19,11 +24,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 23.5rem;
 }
 
 .project-spindr > .right {
   position: relative;
-  height: 50rem;
+  height: 40rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -42,7 +48,7 @@
     #00000000,
     base.$bg-color
   );
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -66,7 +72,7 @@
   height: 95%;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 30px 20px base.$bg-color;
-  z-index: 1;
+  z-index: 2;
   transition: height 0.25s ease;
 }
 .project-spindr .video:hover {
@@ -100,8 +106,9 @@
   width: 200px;
   height: 200px;
   z-index: -1;
-  top: 0px;
+  top: 30px;
   left: -120px;
+  display: none;
 }
 
 .project-spindr .gear-image {
@@ -109,4 +116,11 @@
   height: 100%;
   opacity: 0.8;
   filter: blur(10px);
+}
+@media screen and (max-width: 1000px) {
+  .project-spindr .gear1 {
+    left: auto;
+    top: 70px;
+    right: -120px;
+  }
 }

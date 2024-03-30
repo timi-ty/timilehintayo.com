@@ -8,6 +8,7 @@ import ProjectSpindr from "./components/main/ProjectSpindr";
 import useCurrentSection, {
   SectionId,
 } from "./components/sub/useCurrentSection";
+import AnimatedStrip from "./components/sub/AnimatedStrip";
 
 function App() {
   const { section, setSection } = useCurrentSection(urlSuffixToSectionId());
@@ -18,6 +19,21 @@ function App() {
   //Update the URL suffix when the current section changes.
   useEffect(() => window.history.replaceState({}, "", `${section}`), [section]);
 
+  const stripItems = [
+    "3+ years of engineering expertise",
+    "Advanced react.js proficiency",
+    "Core CSS competence",
+    "Performance optimization",
+    "DevOps",
+    "Automated UI testing",
+    "API design",
+    "AI augmented engineering",
+    "UI engineering systems",
+    "Accessibility compliance",
+    "Performance optimization",
+    "Automated UI testing",
+  ];
+
   return (
     <>
       <header>
@@ -25,7 +41,9 @@ function App() {
       </header>
       <main>
         <Hero id="home" setSection={setSection} />
+        <AnimatedStrip stripItems={stripItems} className={""} />
         <MyEngineeringPrinciples id="engineering-principles" />
+        <AnimatedStrip stripItems={stripItems} className={""} />
         <ProjectSpindr id="projects" />
         <ContactMe id="contact" />
       </main>

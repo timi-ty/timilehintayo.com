@@ -1,4 +1,3 @@
-import AnimatedStrip from "../sub/AnimatedStrip";
 import "./Hero.scss";
 import useGearRotation from "../sub/useGearRotation";
 import { SectionId } from "../sub/useCurrentSection";
@@ -25,21 +24,6 @@ function Hero({ id, setSection }: Props) {
         ...gearRefs.current.slice(indexToOverwrite + 1),
       ];
     };
-
-  const stripItems = [
-    "3+ years of engineering expertise",
-    "Advanced react.js proficiency",
-    "Core CSS competence",
-    "Performance optimization",
-    "DevOps",
-    "Automated UI testing",
-    "API design",
-    "AI augmented engineering",
-    "UI engineering systems",
-    "Accessibility compliance",
-    "Performance optimization",
-    "Automated UI testing",
-  ];
 
   return (
     <div id={id} className="hero">
@@ -78,7 +62,6 @@ function Hero({ id, setSection }: Props) {
           <button>Project Spindr</button>
         </div>
       </div>
-      <AnimatedStrip stripItems={stripItems} className={""} />
     </div>
   );
 }

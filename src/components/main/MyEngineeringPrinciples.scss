@@ -2,13 +2,13 @@
 
 .my-engineering-principles {
   position: relative;
-  padding: 6rem 4rem 4rem 4rem;
+  padding: 6rem 4rem 1rem 4rem;
   overflow-x: hidden;
 }
 
 @media screen and (max-width: base.$mobile-breakwidth) {
   .my-engineering-principles {
-    padding: 6rem 1rem 8rem 1rem;
+    padding: 6rem 1rem 1rem 1rem;
   }
 }
 
@@ -45,7 +45,7 @@
   width: 200px;
   height: 200px;
   z-index: -1;
-  top: 100px;
+  top: 50px;
   right: -120px;
 }
 

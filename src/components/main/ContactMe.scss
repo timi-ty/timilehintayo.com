@@ -2,10 +2,15 @@
 
 .contact-me {
   position: relative;
-  padding: 12rem 4rem 4rem 4rem;
+  padding: 12rem 4rem 0rem 4rem;
   overflow-x: hidden;
   text-align: center;
   z-index: 0;
+}
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .contact-me {
+    padding: 12rem 1rem 0rem 1rem;
+  }
 }
 .contact-me::before {
   content: "";
@@ -17,12 +22,6 @@
   background-image: linear-gradient(#0c0c0c, base.$bg-color);
   opacity: 0.8;
   box-shadow: 0px 0px 30px 20px base.$bg-color;
-}
-
-@media screen and (max-width: base.$mobile-breakwidth) {
-  .contact-me {
-    padding: 12em 1rem 4rem 1rem;
-  }
 }
 
 .contact-me > .title {

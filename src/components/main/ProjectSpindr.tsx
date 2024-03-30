@@ -20,11 +20,16 @@ function ProjectSpindr({ id }: Props) {
           Spindr
         </div>
         <div className="description">
-          Spindr is a music discovery web app built on top of the Spotify Web
-          API that aims to remove most of the thinking from the process of
-          finding new music.
+          Built in 7 weeks by drawing on my years of engineering experience,
+          Spindr is my quintessential engineering project.
+          <br />
+          <br />
+          Spindr is a music discovery web app that aims to remove most of the
+          thinking from the process of finding new music.
+          <br />
+          <br />
+          Spindr helps you find music you love.
         </div>
-        <div className="description">Spindr helps you find music you love.</div>
         <div className="launch-button">
           Launch Spindr
           <img className="launch-icon" src="/resources/external-link.png" />
@@ -32,7 +37,7 @@ function ProjectSpindr({ id }: Props) {
       </div>
       <div className="right">
         <img className="shot" src="/resources/spindrshot1.png" />
-        <video className="video" src="/resources/spindrdemo.mp4" controls />
+        <video className="video" src="/resources/spindrdemo.mp4" />
         <img className="shot" src="/resources/spindrshot2.png" />
       </div>
     </div>
