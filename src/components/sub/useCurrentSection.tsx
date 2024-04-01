@@ -35,6 +35,7 @@ function useCurrentSection(defaultSectionId: SectionId) {
   useEffect(() => {
     function handleIntersection(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
+        console.log(entry.target.id);
         if (entry.isIntersecting)
           visibleSections.current.set(entry.target, entry.intersectionRatio);
         else visibleSections.current.delete(entry.target);
@@ -42,8 +43,10 @@ function useCurrentSection(defaultSectionId: SectionId) {
 
       var maxIntersection = 0;
       visibleSections.current.forEach((intersection, section) => {
-        if (intersection > maxIntersection)
+        if (intersection > maxIntersection) {
+          maxIntersection = intersection;
           setCurrentSectionId(section.id as SectionId);
+        }
       });
     }
 

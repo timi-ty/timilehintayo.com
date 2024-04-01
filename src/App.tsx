@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import ContactMe from "./components/main/ContactMe";
 import Footer from "./components/main/Footer";
 import Header from "./components/main/Header";
@@ -9,15 +9,30 @@ import useCurrentSection, {
   SectionId,
 } from "./components/sub/useCurrentSection";
 import AnimatedStrip from "./components/sub/AnimatedStrip";
+import withSection from "./components/sub/withSection";
 
 function App() {
   const { section, setSection } = useCurrentSection(urlSuffixToSectionId());
 
-  //Set the landing section from the original URL suffix only once when the page loads.
-  useEffect(() => setSection(urlSuffixToSectionId()), []);
+  const HomeSection = useCallback(withSection(Hero, "home", setSection), []);
+  const PrinciplesSection = useCallback(
+    withSection(MyEngineeringPrinciples, "engineering-principles", setSection),
+    []
+  );
+  const ProjectsSection = useCallback(
+    withSection(ProjectSpindr, "projects", setSection),
+    []
+  );
+  const ContactSection = useCallback(
+    withSection(ContactMe, "contact", setSection),
+    []
+  );
 
   //Update the URL suffix when the current section changes.
-  useEffect(() => window.history.replaceState({}, "", `${section}`), [section]);
+  useEffect(() => {
+    window.history.replaceState({}, "", `${section}`);
+    return () => window.history.replaceState({}, "", "");
+  }, [section]);
 
   const stripItems = [
     "3+ years of engineering expertise",
@@ -40,12 +55,12 @@ function App() {
         <Header id="header" currentSection={section} setSection={setSection} />
       </header>
       <main>
-        <Hero id="home" setSection={setSection} />
+        <HomeSection />
         <AnimatedStrip stripItems={stripItems} className={""} />
-        <MyEngineeringPrinciples id="engineering-principles" />
+        <PrinciplesSection />
         <AnimatedStrip stripItems={stripItems} className={""} />
-        <ProjectSpindr id="projects" />
-        <ContactMe id="contact" />
+        <ProjectsSection />
+        <ContactSection />
       </main>
       <footer>
         <Footer id="footer" />
@@ -55,19 +70,7 @@ function App() {
 }
 
 function urlSuffixToSectionId(): SectionId {
-  var urlSuffix = window.location.pathname;
-  switch (urlSuffix) {
-    case "/home":
-      return "home";
-    case "/engineering-principles":
-      return "engineering-principles";
-    case "/projects":
-      return "projects";
-    case "/contact":
-      return "contact";
-    default:
-      return "home";
-  }
+  return window.location.pathname.slice(1) as SectionId;
 }
 
 export default App;

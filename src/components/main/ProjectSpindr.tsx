@@ -32,12 +32,18 @@ function ProjectSpindr({ id }: Props) {
         </div>
         <div className="launch-button">
           Launch Spindr
-          <img className="launch-icon" src="/resources/external-link.png" />
+          <img className="icon" src="/resources/external-link.png" />
         </div>
       </div>
       <div className="right">
         <img className="shot" src="/resources/spindrshot1.png" />
-        <video className="video" src="/resources/spindrdemo.mp4" />
+        <div className="video-container">
+          <video className="video" src="/resources/spindrdemo.mp4" />
+          <div className="play-button">
+            Play Video
+            <img className="icon" src="/resources/play-button.png" />
+          </div>
+        </div>
         <img className="shot" src="/resources/spindrshot2.png" />
       </div>
     </div>
