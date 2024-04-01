@@ -23,3 +23,5 @@ function urlSuffixToSectionId(): SectionId {
 }
 
 export default withSection;
+
+export { urlSuffixToSectionId };

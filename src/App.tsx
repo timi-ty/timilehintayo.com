@@ -5,11 +5,11 @@ import Header from "./components/main/Header";
 import Hero from "./components/main/Hero";
 import MyEngineeringPrinciples from "./components/main/MyEngineeringPrinciples";
 import ProjectSpindr from "./components/main/ProjectSpindr";
-import useCurrentSection, {
-  SectionId,
-} from "./components/sub/useCurrentSection";
+import useCurrentSection from "./components/sub/useCurrentSection";
 import AnimatedStrip from "./components/sub/AnimatedStrip";
-import withSection from "./components/sub/withSection";
+import withSection, {
+  urlSuffixToSectionId,
+} from "./components/sub/withSection";
 
 function App() {
   const { section, setSection } = useCurrentSection(urlSuffixToSectionId());
@@ -30,7 +30,7 @@ function App() {
 
   //Update the URL suffix when the current section changes.
   useEffect(() => {
-    window.history.replaceState({}, "", `${section}`);
+    window.history.replaceState({}, "", `/${section}`);
     return () => window.history.replaceState({}, "", "");
   }, [section]);
 
@@ -67,10 +67,6 @@ function App() {
       </footer>
     </>
   );
-}
-
-function urlSuffixToSectionId(): SectionId {
-  return window.location.pathname.slice(1) as SectionId;
 }
 
 export default App;
