@@ -6,9 +6,10 @@ interface Props {
   id: string;
   currentSection: SectionId;
   setSection: (nextSection: SectionId) => void;
+  onMenuClick: () => void;
 }
 
-function Header({ id, currentSection, setSection }: Props) {
+function Header({ id, currentSection, setSection, onMenuClick }: Props) {
   const gearRefs = useGearRotation();
 
   return (
@@ -87,7 +88,7 @@ function Header({ id, currentSection, setSection }: Props) {
             />
           </a>
         </div>
-        <div className="menu">
+        <div className="menu" onClick={onMenuClick}>
           <img className="icon" src="/resources/menu.png" />
         </div>
       </div>

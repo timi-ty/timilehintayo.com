@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ContactMe from "./components/main/ContactMe";
 import Footer from "./components/main/Footer";
 import Header from "./components/main/Header";
@@ -14,6 +14,7 @@ import NavigationDrawer from "./components/main/NavigationDrawer";
 
 function App() {
   const { section, setSection } = useCurrentSection(urlSuffixToSectionId());
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const HomeSection = useCallback(withSection(Hero, "home", setSection), []);
   const PrinciplesSection = useCallback(
@@ -53,13 +54,21 @@ function App() {
   return (
     <>
       <header>
-        <Header id="header" currentSection={section} setSection={setSection} />
+        <Header
+          id="header"
+          currentSection={section}
+          setSection={setSection}
+          onMenuClick={() => setIsNavOpen(true)}
+        />
       </header>
-      <NavigationDrawer
-        id="navigation-drawer"
-        currentSection={section}
-        setSection={setSection}
-      />
+      {isNavOpen && (
+        <NavigationDrawer
+          id="navigation-drawer"
+          currentSection={section}
+          setSection={setSection}
+          closeSelf={() => setIsNavOpen(false)}
+        />
+      )}
       <main>
         <HomeSection />
         <AnimatedStrip stripItems={stripItems} className={""} />
