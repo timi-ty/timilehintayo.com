@@ -35,7 +35,7 @@ function Hero({ id, setSection }: Props) {
       </div>
       <div className="photo-container1">
         <div className="photo-container2">
-          <img className="photo" src="/resources/timitayobw.jpg" />
+          <img className="photo" src="/resources/timitayobw.png" />
         </div>
       </div>
       <div className="greeting">Hey, I'm Timilehin</div>
