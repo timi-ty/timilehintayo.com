@@ -2,26 +2,16 @@
 
 .contact-me {
   position: relative;
-  padding: 32rem 4rem 2rem 4rem;
+  padding: 2rem 4rem 2rem 4rem;
+  margin-top: 16rem;
   overflow-x: hidden;
   text-align: center;
   z-index: 0;
 }
 @media screen and (max-width: base.$mobile-breakwidth) {
   .contact-me {
-    padding: 32rem 1rem 2rem 1rem;
+    padding: 2rem 1rem 2rem 1rem;
   }
-}
-.contact-me::before {
-  content: "";
-  position: absolute;
-  top: 22rem;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-image: linear-gradient(#0c0c0c, base.$bg-color);
-  opacity: 0.8;
-  box-shadow: 0px 0px 30px 20px base.$bg-color;
 }
 
 .contact-me > .title {
@@ -98,6 +88,7 @@
 
 .contact-me .contact-links .or {
   vertical-align: middle;
+  color: base.$secondary-text-color;
 }
 
 .contact-me .gear1 {
@@ -105,7 +96,7 @@
   width: 200px;
   height: 200px;
   z-index: -1;
-  top: 8rem;
+  top: 25rem;
   left: -120px;
 }
 
@@ -114,7 +105,7 @@
   width: 200px;
   height: 200px;
   z-index: -1;
-  top: 8rem;
+  top: 25rem;
   right: -120px;
 }
 

@@ -2,7 +2,8 @@
 
 .project-spindr {
   position: relative;
-  padding: 6rem 4rem 0rem 4rem;
+  padding: 4rem 4rem 0rem 4rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   gap: 4rem;
@@ -15,7 +16,8 @@
 }
 @media screen and (max-width: base.$mobile-breakwidth) {
   .project-spindr {
-    padding: 6rem 1rem 0rem 1rem;
+    padding: 1rem 1rem 0rem 1rem;
+    margin-top: 5rem;
   }
 }
 
