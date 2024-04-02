@@ -11,7 +11,6 @@
 @media screen and (max-width: 1000px) {
   .project-spindr {
     flex-direction: column;
-    gap: 2rem;
   }
 }
 @media screen and (max-width: base.$mobile-breakwidth) {
@@ -34,6 +33,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .project-spindr > .right {
+    height: 30rem;
+    font-size: small;
+  }
 }
 .project-spindr > .right::after {
   content: "";
