@@ -27,6 +27,7 @@
 }
 
 .header > .left {
+  @extend %no-text-select;
   display: flex;
   height: 100%;
   justify-content: space-around;
@@ -90,8 +91,10 @@
   border: solid 1px base.$secondary-text-color;
   border-radius: 50%;
 }
-.header .social:hover {
-  border: solid 1px base.$primary-text-color;
+@media (hover: hover) {
+  .header .social:hover {
+    border: solid 1px base.$primary-text-color;
+  }
 }
 
 .header .contact-now {
@@ -105,8 +108,10 @@
   font-weight: 500;
   gap: 0.3rem;
 }
-.header .contact-now:hover {
-  border: solid 1px base.$primary-text-color;
+@media (hover: hover) {
+  .header .contact-now:hover {
+    border: solid 1px base.$primary-text-color;
+  }
 }
 
 .header .arrow {
@@ -120,8 +125,10 @@
   @extend %clickable;
   color: base.$secondary-text-color;
 }
-.header .link:hover {
-  color: base.$primary-text-color;
+@media (hover: hover) {
+  .header .link:hover {
+    color: base.$primary-text-color;
+  }
 }
 .header .link:active {
   color: base.$primary-text-color;

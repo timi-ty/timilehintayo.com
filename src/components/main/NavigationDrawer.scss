@@ -58,8 +58,10 @@
   @extend %clickable;
   color: base.$secondary-text-color;
 }
-.navigation-drawer .link:hover {
-  color: base.$primary-text-color;
+@media (hover: hover) {
+  .navigation-drawer .link:hover {
+    color: base.$primary-text-color;
+  }
 }
 .navigation-drawer .link:active {
   color: base.$primary-text-color;
@@ -84,8 +86,10 @@
   gap: 0.5rem;
   color: base.$primary-text-color;
 }
-.navigation-drawer .social:hover {
-  border: solid 1px base.$primary-text-color;
+@media (hover: hover) {
+  .navigation-drawer .social:hover {
+    border: solid 1px base.$primary-text-color;
+  }
 }
 
 .navigation-drawer .contact-now {

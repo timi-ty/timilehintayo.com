@@ -1,6 +1,7 @@
 @use "../../base";
 
 .strip {
+  @extend %no-text-select;
   position: relative;
   margin-top: 6rem;
   width: 100%;

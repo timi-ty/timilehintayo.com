@@ -7,6 +7,13 @@ $primary-text-color: #f0f0f0;
 $secondary-text-color: #5b5b5b;
 $action-color: #808080;
 
+%no-text-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard syntax */
+}
+
 %gradient-text {
   background: linear-gradient(
     to right,
@@ -23,8 +30,10 @@ $action-color: #808080;
   transition: scale 0.1s ease;
   cursor: pointer;
 }
-%clickable:hover {
-  scale: 1.05;
+@media (hover: hover) {
+  %clickable:hover {
+    scale: 1.05;
+  }
 }
 %clickable:active {
   scale: 0.95;

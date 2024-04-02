@@ -60,8 +60,10 @@ a {
   color: base.$secondary-text-color;
   text-decoration: none;
 }
-a:hover {
-  color: base.$primary-text-color;
+@media (hover: hover) {
+  a:hover {
+    color: base.$primary-text-color;
+  }
 }
 a:active {
   color: base.$primary-text-color;
@@ -82,6 +84,7 @@ button {
 
 .button-container {
   @extend %clickable;
+  @extend %no-text-select;
   padding: 1px;
   border-radius: 99999px;
   background-image: linear-gradient(
@@ -90,12 +93,14 @@ button {
     base.$bg-color
   );
 }
-.button-container:hover {
-  background-image: linear-gradient(
-    to right,
-    base.$secondary-text-color,
-    base.$secondary-text-color
-  );
+@media (hover: hover) {
+  .button-container:hover {
+    background-image: linear-gradient(
+      to right,
+      base.$secondary-text-color,
+      base.$secondary-text-color
+    );
+  }
 }
 .button-container:active {
   background-image: linear-gradient(
