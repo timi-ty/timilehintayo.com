@@ -130,9 +130,6 @@
     color: base.$primary-text-color;
   }
 }
-.header .link:active {
-  color: base.$primary-text-color;
-}
 @media (hover: hover) {
   .header .link:hover .primary {
     color: base.$secondary-text-color;

@@ -63,11 +63,10 @@
     color: base.$primary-text-color;
   }
 }
-.navigation-drawer .link:active {
-  color: base.$primary-text-color;
-}
-.navigation-drawer .link:hover .primary {
-  color: base.$secondary-text-color;
+@media (hover: hover) {
+  .navigation-drawer .link:hover .primary {
+    color: base.$secondary-text-color;
+  }
 }
 .navigation-drawer .link.selected {
   color: base.$primary-text-color;
@@ -104,8 +103,10 @@
   font-weight: 500;
   gap: 0.3rem;
 }
-.navigation-drawer .contact-now:hover {
-  border: solid 1px base.$primary-text-color;
+@media (hover: hover) {
+  .navigation-drawer .contact-now:hover {
+    border: solid 1px base.$primary-text-color;
+  }
 }
 
 .navigation-drawer .arrow {
