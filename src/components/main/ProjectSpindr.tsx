@@ -16,6 +16,29 @@ function ProjectSpindr({ id }: Props) {
     isPlaying ? videoRef.current?.play() : videoRef.current?.pause();
   }, [isPlaying, videoRef.current]);
 
+  useEffect(() => {
+    if (!videoRef.current) return;
+
+    function handleIntersection(entries: IntersectionObserverEntry[]) {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio <= 0.7) {
+          (entry.target as HTMLVideoElement).style.height = "95%";
+        } else if (entry.intersectionRatio === 1.0) {
+          (entry.target as HTMLVideoElement).style.height = "100%";
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: [0.7, 1.0],
+    });
+    observer.observe(videoRef.current);
+
+    return () => {
+      if (videoRef.current) observer.unobserve(videoRef.current);
+    };
+  }, [videoRef.current]);
+
   return (
     <div id={id} className="project-spindr">
       <div ref={(mRef) => (gearRefs.current = [mRef])} className="gear1">
