@@ -43,11 +43,11 @@ body {
   }
 }
 *::-webkit-scrollbar-thumb {
-  background-color: base.$bg-color;
+  background-color: base.$bg-accent-color;
 }
 
 *::-webkit-scrollbar-track {
-  background: base.$bg-accent-color;
+  background: base.$bg-color;
 }
 
 .primary {

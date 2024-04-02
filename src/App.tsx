@@ -10,6 +10,7 @@ import AnimatedStrip from "./components/sub/AnimatedStrip";
 import withSection, {
   urlSuffixToSectionId,
 } from "./components/sub/withSection";
+import NavigationDrawer from "./components/main/NavigationDrawer";
 
 function App() {
   const { section, setSection } = useCurrentSection(urlSuffixToSectionId());
@@ -45,7 +46,7 @@ function App() {
     "AI augmented engineering",
     "UI engineering systems",
     "Accessibility compliance",
-    "Performance optimization",
+    "Fluid animations",
     "Automated UI testing",
   ];
 
@@ -54,6 +55,11 @@ function App() {
       <header>
         <Header id="header" currentSection={section} setSection={setSection} />
       </header>
+      <NavigationDrawer
+        id="navigation-drawer"
+        currentSection={section}
+        setSection={setSection}
+      />
       <main>
         <HomeSection />
         <AnimatedStrip stripItems={stripItems} className={""} />
