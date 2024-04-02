@@ -51,6 +51,9 @@ function NavigationDrawer({
           ev.stopPropagation();
         }}
       >
+        <div className="close" onClick={close}>
+          <img className="icon" src="/resources/close.png" />
+        </div>
         <nav className="top">
           <div
             className={`link ${
