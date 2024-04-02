@@ -47,8 +47,8 @@ function App() {
     "AI augmented engineering",
     "UI engineering systems",
     "Accessibility compliance",
-    "Fluid animations",
     "Automated UI testing",
+    "Fluid animations",
   ];
 
   return (
