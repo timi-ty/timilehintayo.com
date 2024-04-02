@@ -21,6 +21,7 @@ function ProjectSpindr({ id }: Props) {
 
     function handleIntersection(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
+        if (entry.intersectionRatio <= 0.1) setIsPlaying(false);
         if (entry.intersectionRatio <= 0.7) {
           (entry.target as HTMLVideoElement).style.height = "95%";
         } else if (entry.intersectionRatio === 1.0) {
@@ -30,7 +31,7 @@ function ProjectSpindr({ id }: Props) {
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0.7, 1.0],
+      threshold: [0.1, 0.7, 1.0],
     });
     observer.observe(videoRef.current);
 
