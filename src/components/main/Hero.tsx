@@ -44,9 +44,13 @@ function Hero({ id, setSection }: Props) {
         <br />
         Frontend - React.js
       </div>
-      <div className="description">
+      <div className="description long">
         Leveraging modern technologies to deliver seamless frontend experiences,
         ensuring swift deployment and optimal UX.
+      </div>
+      <div className="description short">
+        Utilizing modern tech for seamless frontends, swift deployment, and
+        optimal UX.
       </div>
       <div className="button-group">
         <div

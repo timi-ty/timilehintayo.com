@@ -63,6 +63,16 @@
   max-width: 32rem;
   color: base.$secondary-text-color;
 }
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .description.long {
+    display: none;
+  }
+}
+@media screen and (min-width: base.$mobile-breakwidth) {
+  .description.short {
+    display: none;
+  }
+}
 
 .hero .button-group {
   margin-top: 4rem;
