@@ -34,6 +34,22 @@ body {
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  width: 16px;
+}
+@media screen and (max-width: base.$mobile-breakwidth) {
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+*::-webkit-scrollbar-thumb {
+  background-color: base.$bg-color;
+}
+
+*::-webkit-scrollbar-track {
+  background: base.$bg-accent-color;
+}
+
 .primary {
   color: base.$primary-text-color;
 }
