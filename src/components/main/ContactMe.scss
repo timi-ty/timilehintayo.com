@@ -2,20 +2,20 @@
 
 .contact-me {
   position: relative;
-  padding: 12rem 4rem 0rem 4rem;
+  padding: 32rem 4rem 2rem 4rem;
   overflow-x: hidden;
   text-align: center;
   z-index: 0;
 }
 @media screen and (max-width: base.$mobile-breakwidth) {
   .contact-me {
-    padding: 12rem 1rem 0rem 1rem;
+    padding: 32rem 1rem 2rem 1rem;
   }
 }
 .contact-me::before {
   content: "";
   position: absolute;
-  top: 100px;
+  top: 22rem;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -38,6 +38,11 @@
   justify-content: center;
   gap: 4rem;
   align-items: center;
+}
+@media screen and (max-width: base.$mobile-breakwidth) {
+  .contact-me .contact-links {
+    flex-direction: column;
+  }
 }
 
 .contact-me .contact-link {
@@ -100,7 +105,7 @@
   width: 200px;
   height: 200px;
   z-index: -1;
-  top: 0px;
+  top: 8rem;
   left: -120px;
 }
 
@@ -109,7 +114,7 @@
   width: 200px;
   height: 200px;
   z-index: -1;
-  top: 0px;
+  top: 8rem;
   right: -120px;
 }
 

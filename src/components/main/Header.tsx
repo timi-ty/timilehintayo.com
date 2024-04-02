@@ -1,7 +1,6 @@
 import "./Header.scss";
 import useGearRotation from "../sub/useGearRotation";
 import { SectionId } from "../sub/useCurrentSection";
-import { useMemo } from "react";
 
 interface Props {
   id: string;
@@ -11,13 +10,6 @@ interface Props {
 
 function Header({ id, currentSection, setSection }: Props) {
   const gearRefs = useGearRotation();
-
-  const email = "timilehin.ty@gmail.com";
-  const encodedEmail = useMemo(
-    () => encodeURIComponent(email).replace(/\./g, "%2E").replace(/@/g, "%40"),
-    []
-  );
-  const mailtoLink = "mailto:" + encodedEmail;
 
   return (
     <div id={id} className="header-outer">
@@ -83,7 +75,10 @@ function Header({ id, currentSection, setSection }: Props) {
           >
             <img className="badge" src="/resources/github.png" alt="GitHub" />
           </a>
-          <a className="contact-now primary" href={mailtoLink}>
+          <a
+            className="contact-now primary"
+            href={"mailto: timilehin%2Ety%40gmail%2Ecom"}
+          >
             Contact Now
             <img
               className="arrow"

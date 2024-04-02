@@ -33,15 +33,19 @@ function ContactMe({ id }: Props) {
       </div>
       <div className="title">I'm open to work!</div>
       <div className="contact-links">
-        <div className="contact-link">
-          <div className="title">Reach me on LinkedIn</div>
-          <img className="image" src="/resources/linkedin.png" />
-        </div>
+        <a href="https://www.linkedin.com/in/timilehin-tayo/">
+          <div className="contact-link">
+            <div className="title">Reach me on LinkedIn</div>
+            <img className="image" src="/resources/linkedin.png" />
+          </div>
+        </a>
         <div className="or">or</div>
-        <div className="contact-link">
-          <div className="title">Send me an email</div>
-          <img className="image" src="/resources/linkedin.png" />
-        </div>
+        <a href="mailto: timilehin%2Ety%40gmail%2Ecom">
+          <div className="contact-link">
+            <div className="title">Send me an email</div>
+            <img className="image" src="/resources/linkedin.png" />
+          </div>
+        </a>
       </div>
     </div>
   );

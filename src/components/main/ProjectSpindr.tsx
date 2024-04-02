@@ -1,5 +1,6 @@
 import "./ProjectSpindr.scss";
 import useGearRotation from "../sub/useGearRotation";
+import { LegacyRef, useEffect, useRef, useState } from "react";
 
 interface Props {
   id: string;
@@ -7,6 +8,13 @@ interface Props {
 
 function ProjectSpindr({ id }: Props) {
   const gearRefs = useGearRotation();
+  const videoRef: LegacyRef<HTMLVideoElement> = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.loop = true;
+    isPlaying ? videoRef.current?.play() : videoRef.current?.pause();
+  }, [isPlaying, videoRef.current]);
 
   return (
     <div id={id} className="project-spindr">
@@ -20,8 +28,8 @@ function ProjectSpindr({ id }: Props) {
           Spindr
         </div>
         <div className="description">
-          Built in 7 weeks by drawing on my years of engineering experience,
-          Spindr is my quintessential engineering project.
+          Spindr is my quintessential engineering project, built on top of my
+          years of engineering experience.
           <br />
           <br />
           Spindr is a music discovery web app that aims to remove most of the
@@ -30,18 +38,30 @@ function ProjectSpindr({ id }: Props) {
           <br />
           Spindr helps you find music you love.
         </div>
-        <div className="launch-button">
-          Launch Spindr
-          <img className="icon" src="/resources/external-link.png" />
-        </div>
+        <a href="https://spindr.pro" target="_blank" className="link">
+          <div className="launch-button">
+            Launch Spindr
+            <img className="icon" src="/resources/external-link.png" />
+          </div>
+        </a>
       </div>
       <div className="right">
         <img className="shot" src="/resources/spindrshot1.png" />
-        <div className="video-container">
-          <video className="video" src="/resources/spindrdemo.mp4" />
+        <div
+          className="video-container"
+          onClick={() => setIsPlaying((p) => !p)}
+        >
+          <video
+            ref={videoRef}
+            className="video"
+            src="/resources/spindrdemo.mp4"
+          />
           <div className="play-button">
-            Play Video
-            <img className="icon" src="/resources/play-button.png" />
+            {isPlaying ? "Pause" : "Play"} Video
+            <img
+              className="icon"
+              src={`/resources/${isPlaying ? "pause" : "play"}.png`}
+            />
           </div>
         </div>
         <img className="shot" src="/resources/spindrshot2.png" />

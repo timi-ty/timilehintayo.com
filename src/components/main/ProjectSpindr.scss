@@ -72,20 +72,21 @@
   position: relative;
   height: 95%;
   transition: height 0.25s ease;
+  z-index: 2;
+  cursor: pointer;
 }
 .project-spindr .video {
   height: 100%;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 30px 20px base.$bg-color;
-  z-index: 2;
 }
 .project-spindr .play-button {
   position: absolute;
   text-align: center;
   height: 2.5rem;
   top: 0;
-  left: 30%;
-  right: 30%;
+  left: 25%;
+  right: 25%;
   padding: 0.5rem;
   color: white;
   display: flex;
@@ -101,6 +102,10 @@
   height: 85%;
 }
 
+.project-spindr .link {
+  width: fit-content;
+  margin-top: 2rem;
+}
 .project-spindr .launch-button {
   background-color: #994aff;
   font-size: 1.2rem;
@@ -113,9 +118,7 @@
   height: 4rem;
   align-items: center;
   border-radius: 0.5rem;
-  margin-top: 2rem;
 }
-
 .project-spindr .icon {
   height: 100%;
 }
