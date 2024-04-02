@@ -2,16 +2,18 @@
 
 .header-outer {
   position: fixed;
+  height: 3rem;
   top: 0px;
   left: 8px;
   right: 8px;
   display: flex;
   justify-content: center;
   z-index: 10;
+  transition: translate 0.1s ease;
 }
 
 .header {
-  height: base.$header-height;
+  height: 100%;
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
