@@ -9,19 +9,32 @@ interface Props {
 function ProjectSpindr({ id }: Props) {
   const gearRefs = useGearRotation();
   const videoRef: LegacyRef<HTMLVideoElement> = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isVideoLoaded, setisVideoLoaded] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) videoRef.current.loop = true;
-    isPlaying ? videoRef.current?.play() : videoRef.current?.pause();
-  }, [isPlaying, videoRef.current]);
+    isVideoPlaying ? videoRef.current?.play() : videoRef.current?.pause();
+  }, [isVideoPlaying, videoRef.current]);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    function handleLoadedData() {
+      setisVideoLoaded(true);
+    }
+    videoRef.current.addEventListener("loadeddata", handleLoadedData);
+    return () => {
+      if (videoRef.current)
+        videoRef.current.removeEventListener("loadeddata", handleLoadedData);
+    };
+  }, [videoRef.current]);
 
   useEffect(() => {
     if (!videoRef.current) return;
 
     function handleIntersection(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio <= 0.1) setIsPlaying(false);
+        if (entry.intersectionRatio <= 0.1) setIsVideoPlaying(false);
         if (entry.intersectionRatio <= 0.7) {
           (entry.target as HTMLVideoElement).style.height = "95%";
         } else if (entry.intersectionRatio === 1.0) {
@@ -73,20 +86,22 @@ function ProjectSpindr({ id }: Props) {
         <img className="shot" src="/resources/spindrshot1.webp" />
         <div
           className="video-container"
-          onClick={() => setIsPlaying((p) => !p)}
+          onClick={() => setIsVideoPlaying((p) => !p)}
         >
+          {isVideoLoaded && (
+            <div className="play-button">
+              {isVideoPlaying ? "Pause" : "Play"} Video
+              <img
+                className="icon"
+                src={`/resources/${isVideoPlaying ? "pause" : "play"}.webp`}
+              />
+            </div>
+          )}
           <video
             ref={videoRef}
             className="video"
             src="/resources/spindrdemo.mp4"
           />
-          <div className="play-button">
-            {isPlaying ? "Pause" : "Play"} Video
-            <img
-              className="icon"
-              src={`/resources/${isPlaying ? "pause" : "play"}.webp`}
-            />
-          </div>
         </div>
         <img className="shot" src="/resources/spindrshot2.webp" />
       </div>
