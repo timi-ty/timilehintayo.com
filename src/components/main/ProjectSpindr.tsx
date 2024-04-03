@@ -43,7 +43,7 @@ function ProjectSpindr({ id }: Props) {
   return (
     <div id={id} className="project-spindr">
       <div ref={(mRef) => (gearRefs.current = [mRef])} className="gear1">
-        <img className="gear-image" src="/resources/gear_dark.png" />
+        <img className="gear-image" src="/resources/gear_dark.webp" />
       </div>
       <div className="left">
         <div className="title">
@@ -65,12 +65,12 @@ function ProjectSpindr({ id }: Props) {
         <a href="https://spindr.pro" target="_blank" className="link">
           <div className="launch-button">
             Launch Spindr
-            <img className="icon" src="/resources/external-link.png" />
+            <img className="icon" src="/resources/external-link.webp" />
           </div>
         </a>
       </div>
       <div className="right">
-        <img className="shot" src="/resources/spindrshot1.png" />
+        <img className="shot" src="/resources/spindrshot1.webp" />
         <div
           className="video-container"
           onClick={() => setIsPlaying((p) => !p)}
@@ -84,11 +84,11 @@ function ProjectSpindr({ id }: Props) {
             {isPlaying ? "Pause" : "Play"} Video
             <img
               className="icon"
-              src={`/resources/${isPlaying ? "pause" : "play"}.png`}
+              src={`/resources/${isPlaying ? "pause" : "play"}.webp`}
             />
           </div>
         </div>
-        <img className="shot" src="/resources/spindrshot2.png" />
+        <img className="shot" src="/resources/spindrshot2.webp" />
       </div>
     </div>
   );

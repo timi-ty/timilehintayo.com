@@ -39,7 +39,7 @@ function Header({ id, currentSection, setSection, onMenuClick }: Props) {
           <img
             ref={(mRef) => (gearRefs.current = [mRef])}
             className="badge"
-            src="/resources/gear_white.png"
+            src="/resources/gear_white.webp"
             alt="Gear"
           />
           <div>
@@ -85,7 +85,7 @@ function Header({ id, currentSection, setSection, onMenuClick }: Props) {
           >
             <img
               className="badge"
-              src="/resources/linkedin.png"
+              src="/resources/linkedin.webp"
               alt="LinkedIn"
             />
           </a>
@@ -94,7 +94,7 @@ function Header({ id, currentSection, setSection, onMenuClick }: Props) {
             href="https://github.com/timi-ty"
             target="_blank"
           >
-            <img className="badge" src="/resources/github.png" alt="GitHub" />
+            <img className="badge" src="/resources/github.webp" alt="GitHub" />
           </a>
           <a
             className="contact-now primary"
@@ -103,13 +103,13 @@ function Header({ id, currentSection, setSection, onMenuClick }: Props) {
             Contact Now
             <img
               className="arrow"
-              src="/resources/right_arrow.png"
+              src="/resources/right_arrow.webp"
               alt="Contact Now"
             />
           </a>
         </div>
         <div className="menu" onClick={onMenuClick}>
-          <img className="icon" src="/resources/menu.png" />
+          <img className="icon" src="/resources/menu.webp" alt="Menu" />
         </div>
       </div>
     </div>

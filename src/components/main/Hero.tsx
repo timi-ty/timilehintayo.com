@@ -28,14 +28,14 @@ function Hero({ id, setSection }: Props) {
   return (
     <div id={id} className="hero">
       <div ref={grabGearRef(0)} className="gear1">
-        <img className="gear-image" src="/resources/gear_dark.png" />
+        <img className="gear-image" src="/resources/gear_dark.webp" />
       </div>
       <div ref={grabGearRef(1)} className="gear2">
-        <img className="gear-image" src="/resources/gear_dark.png" />
+        <img className="gear-image" src="/resources/gear_dark.webp" />
       </div>
       <div className="photo-container1">
         <div className="photo-container2">
-          <img className="photo" src="/resources/timitayobw.png" />
+          <img className="photo" src="/resources/timitayobw.webp" />
         </div>
       </div>
       <div className="greeting">Hey, I'm Timilehin</div>

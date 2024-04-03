@@ -41,6 +41,12 @@
   padding: 0.3rem;
 }
 
+.header .left .badge {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.3rem;
+}
+
 .header > .middle {
   display: flex;
   justify-content: space-around;
@@ -86,7 +92,8 @@
 }
 
 .header .social {
-  height: 100%;
+  height: 2rem;
+  width: 2rem;
   padding: 0.1rem;
   border: solid 1px base.$secondary-text-color;
   border-radius: 50%;
@@ -115,7 +122,8 @@
 }
 
 .header .arrow {
-  height: 100%;
+  height: 1.32rem;
+  width: 1.32rem;
   padding: 0.1rem;
   background-color: base.$action-color;
   border-radius: 50%;

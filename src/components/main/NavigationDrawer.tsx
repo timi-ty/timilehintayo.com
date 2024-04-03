@@ -52,7 +52,7 @@ function NavigationDrawer({
         }}
       >
         <div className="close" onClick={close}>
-          <img className="icon" src="/resources/close.png" />
+          <img className="icon" src="/resources/close.webp" />
         </div>
         <nav className="top">
           <div
@@ -101,7 +101,7 @@ function NavigationDrawer({
           >
             <img
               className="badge"
-              src="/resources/linkedin.png"
+              src="/resources/linkedin.webp"
               alt="LinkedIn"
             />
             LinkedIn
@@ -111,7 +111,7 @@ function NavigationDrawer({
             href="https://github.com/timi-ty"
             target="_blank"
           >
-            <img className="badge" src="/resources/github.png" alt="GitHub" />
+            <img className="badge" src="/resources/github.webp" alt="GitHub" />
             GitHub
           </a>
           <a
@@ -121,7 +121,7 @@ function NavigationDrawer({
             Contact Now
             <img
               className="arrow"
-              src="/resources/right_arrow.png"
+              src="/resources/right_arrow.webp"
               alt="Contact Now"
             />
           </a>

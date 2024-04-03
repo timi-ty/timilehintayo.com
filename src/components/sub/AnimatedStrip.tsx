@@ -83,7 +83,7 @@ function AnimatedStrip({ stripItems, className }: Props) {
             ref={(mRef) => (stripItemsRefs.current[index] = mRef)}
             className="strip-item"
           >
-            <img className="strip-badge" src="/resources/tick.png" />
+            <img className="strip-badge" src="/resources/tick.webp" />
             <div className="strip-text">{item}</div>
           </div>
         );

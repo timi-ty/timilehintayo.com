@@ -26,24 +26,24 @@ function ContactMe({ id }: Props) {
   return (
     <div id={id} className="contact-me">
       <div ref={grabGearRef(0)} className="gear1">
-        <img className="gear-image" src="/resources/gear_dark.png" />
+        <img className="gear-image" src="/resources/gear_dark.webp" />
       </div>
       <div ref={grabGearRef(1)} className="gear2">
-        <img className="gear-image" src="/resources/gear_dark.png" />
+        <img className="gear-image" src="/resources/gear_dark.webp" />
       </div>
       <div className="title">I'm open to work!</div>
       <div className="contact-links">
         <a href="https://www.linkedin.com/in/timilehin-tayo/">
           <div className="contact-link">
             <div className="title">Reach me on LinkedIn</div>
-            <img className="image" src="/resources/linkedin.png" />
+            <img className="image" src="/resources/linkedin.webp" />
           </div>
         </a>
         <div className="or">or</div>
         <a href="mailto: timilehin%2Ety%40gmail%2Ecom">
           <div className="contact-link">
             <div className="title">Send me an email</div>
-            <img className="image" src="/resources/linkedin.png" />
+            <img className="image" src="/resources/linkedin.webp" />
           </div>
         </a>
       </div>
