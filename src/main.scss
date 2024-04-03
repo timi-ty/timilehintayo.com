@@ -2,13 +2,12 @@
 @use "./animations";
 
 @font-face {
-  font-family: Inter;
-  src: url("../resources/Inter.ttf");
+  font-family: InterCustom;
+  src: url("../resources/Inter-Regular.woff2");
 }
 
 html {
-  /* Add fallback fonts */
-  font-family: Inter;
+  font-family: Inter, InterCustom, Arial, Helvetica, sans-serif;
   background-color: base.$bg-color;
   color: base.$primary-text-color;
 }
