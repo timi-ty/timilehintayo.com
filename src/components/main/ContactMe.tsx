@@ -43,7 +43,7 @@ function ContactMe({ id }: Props) {
         <a href="mailto: timilehin%2Ety%40gmail%2Ecom">
           <div className="contact-link">
             <div className="title">Send me an email</div>
-            <img className="image" src="/resources/linkedin.webp" />
+            <img className="image" src="/resources/email.webp" />
           </div>
         </a>
       </div>
