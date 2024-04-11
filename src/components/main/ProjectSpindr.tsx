@@ -89,11 +89,11 @@ function ProjectSpindr({ id }: Props) {
           onClick={() => setIsVideoPlaying((p) => !p)}
         >
           {isVideoLoaded && (
-            <div className="play-button">
-              {isVideoPlaying ? "Pause" : "Play"} Video
+            <div className="play-button-container">
               <img
-                className="icon"
+                className="play-button"
                 src={`/resources/${isVideoPlaying ? "pause" : "play"}.webp`}
+                style={{ opacity: `${isVideoPlaying ? "0.1" : "1.0"}` }}
               />
             </div>
           )}
