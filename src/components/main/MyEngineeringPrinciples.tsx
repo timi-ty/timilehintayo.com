@@ -15,7 +15,7 @@ function MyEngineeringPrinciples({ id }: Props) {
         <img className="gear-image" src="/resources/gear_dark.webp" />
       </div>
       <div className="title">
-        My Engineering principles for quality code and products
+        My engineering principles for quality code and products
       </div>
       <div className="principle-cards">
         <EngineeringPrinciple
