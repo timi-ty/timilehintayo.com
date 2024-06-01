@@ -65,15 +65,14 @@ function ProjectSpindr({ id }: Props) {
           Spindr
         </div>
         <div className="description">
-          Spindr is my quintessential engineering project, built on top of my
-          years of engineering experience.
+          Spindr is a music discovery web application with 2000+ users.
           <br />
           <br />
-          Spindr is a music discovery web app that aims to remove most of the
-          thinking from the process of finding new music.
+          Spindr aims to remove most of the thinking from the process of finding
+          new music.
           <br />
           <br />
-          Spindr helps you find music you love.
+          Spindr makes it easy to find music you love.
         </div>
         <a href="https://spindr.pro" target="_blank" className="link">
           <div className="launch-button">
