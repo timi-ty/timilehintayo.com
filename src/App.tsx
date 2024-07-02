@@ -37,19 +37,19 @@ function App() {
   }, [section]);
 
   const stripItems = [
-    "3+ years of engineering expertise",
-    "Advanced React.js proficiency",
-    "Core CSS competence",
-    "Advanced Node.js proficiency",
-    "Performance optimization",
+    "3+ years of Engineering Expertise",
+    "Advanced React.js Proficiency",
+    "Core CSS Competence",
+    "Advanced Node.js Proficiency",
+    "Performance Optimization",
     "DevOps",
-    "Automated testing",
-    "API design and development",
-    "AI augmented engineering",
-    "Engineering systems",
-    "Accessibility compliance",
-    "Automated testing",
-    "Fluid animations",
+    "Automated Testing",
+    "API Design and Development",
+    "AI Augmented Engineering",
+    "Systems Engineering",
+    "Accessibility Compliance",
+    "Automated Testing",
+    "Fluid Animations",
   ];
 
   return (
