@@ -39,17 +39,13 @@ function Hero({ id, setSection }: Props) {
         </div>
       </div>
       <div className="greeting">Hey, I'm Timilehin</div>
-      <div className="title">
-        Software Engineer in
-        <br />
-        Frontend - React.js
-      </div>
+      <div className="title">Software Engineer</div>
       <div className="description long">
-        Leveraging modern technologies to deliver seamless frontend experiences,
+        Leveraging modern technologies to deliver seamless applications,
         ensuring swift deployment and optimal UX.
       </div>
       <div className="description short">
-        Utilizing modern tech for seamless frontends, swift deployment, and
+        Utilizing modern tech for seamless applications, swift deployment, and
         optimal UX.
       </div>
       <div className="button-group">
