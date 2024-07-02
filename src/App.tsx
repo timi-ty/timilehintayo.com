@@ -40,6 +40,7 @@ function App() {
     "3+ years of engineering expertise",
     "Advanced React.js proficiency",
     "Core CSS competence",
+    "Advanced Node.js proficiency",
     "Performance optimization",
     "DevOps",
     "Automated testing",
