@@ -38,16 +38,16 @@ function App() {
 
   const stripItems = [
     "3+ years of engineering expertise",
-    "Advanced react.js proficiency",
+    "Advanced React.js proficiency",
     "Core CSS competence",
     "Performance optimization",
     "DevOps",
-    "Automated UI testing",
-    "API design",
+    "Automated testing",
+    "API design and development",
     "AI augmented engineering",
-    "UI engineering systems",
+    "Engineering systems",
     "Accessibility compliance",
-    "Automated UI testing",
+    "Automated testing",
     "Fluid animations",
   ];
 
